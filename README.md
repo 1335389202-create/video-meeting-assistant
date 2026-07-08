@@ -14,7 +14,7 @@
 
 ---
 
-# 📦 产品需求文档 (PRD) - 视频会议助手 (v1.0)
+# 📦 产品需求文档 (PRD) - 视频会议助手 (V3)
 
 **文档状态**：已发布体验版  
 **项目类型**：Web 应用 (B 端 SaaS 视频会议管理)  
@@ -295,36 +295,6 @@ video-meeting-assistant/
 ### 7.1 在线体验
 
 直接访问：**[视频会议助手 V3](https://5mhb9wjg29.coze.site)**
-
-### 7.2 本地开发（可选）
-
-如果你想在本地运行项目进行开发：
-
-#### 环境要求
-- Node.js 18+
-- pnpm 9+
-
-#### 常用命令
-
-```bash
-# 安装依赖
-pnpm install
-
-# 开发模式
-pnpm dev
-
-# 构建生产版本
-pnpm build
-
-# 启动生产服务
-pnpm start
-
-# 类型检查
-pnpm ts-check
-
-# 代码检查
-pnpm lint
-```
 
 ---
 
