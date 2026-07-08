@@ -304,49 +304,27 @@ video-meeting-assistant/
 - Node.js 18+
 - pnpm 9+
 
-#### 安装依赖
+#### 常用命令
 
 ```bash
-# 使用 pnpm 安装依赖（项目已配置仅允许 pnpm）
+# 安装依赖
 pnpm install
-```
 
-#### 开发模式
-
-```bash
+# 开发模式
 pnpm dev
-```
 
-打开浏览器访问 [http://localhost:3000](http://localhost:3000)
-
-#### 构建生产版本
-
-```bash
+# 构建生产版本
 pnpm build
-```
 
-#### 启动生产服务
-
-```bash
+# 启动生产服务
 pnpm start
-```
 
-#### 代码检查
-
-```bash
-# TypeScript 类型检查
+# 类型检查
 pnpm ts-check
 
-# ESLint 检查
+# 代码检查
 pnpm lint
 ```
-
-### 7.3 Coze 开发流程
-
-1. 在 Coze IDE 中打开项目
-2. 使用 Coze 提供的开发工具进行开发
-3. 提交代码后自动触发 Coze CI/CD
-4. 部署成功后访问分配的域名
 
 ---
 
@@ -363,14 +341,6 @@ pnpm lint
 ## 📄 许可证
 
 MIT License
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-## 📧 联系方式
-
-如有问题，请通过 Issue 联系。
 
 ---
 
