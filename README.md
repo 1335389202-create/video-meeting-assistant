@@ -276,7 +276,6 @@ video-meeting-assistant/
 ├── tsconfig.json                # TypeScript 配置
 ├── tailwind.config.ts           # Tailwind 配置
 ├── next.config.ts               # Next.js 配置
-├── DEPLOY.md                    # 部署指南
 ├── LICENSE                      # MIT 许可证
 └── README.md                    # 项目文档
 ```
@@ -358,12 +357,6 @@ pnpm lint
 |  |  |  |
 | 文档库 | 待办事项 | 效能洞察 |
 |  |  |  |
-
----
-
-## 部署指南
-
-详细部署步骤请见 [DEPLOY.md](./DEPLOY.md)
 
 ---
 
