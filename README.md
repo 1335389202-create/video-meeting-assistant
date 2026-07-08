@@ -6,6 +6,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000.svg)](https://nextjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4.svg)](https://tailwindcss.com)
+[![Deployed](https://img.shields.io/badge/Deployed-Live-brightgreen.svg)](https://5mhb9wjg29.coze.site)
+
+## 🌐 在线演示
+
+立即体验：**[视频会议助手 V3](https://5mhb9wjg29.coze.site)**
 
 ## 📋 项目简介
 
