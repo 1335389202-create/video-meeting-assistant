@@ -12,108 +12,266 @@
 
 立即体验：**[视频会议助手 V3](https://5mhb9wjg29.coze.site)**
 
-## 📋 项目简介
+---
 
-这是一个现代化的商业级视频会议管理单页应用（SPA），采用最新的技术栈构建，提供完整的会议全生命周期管理解决方案。
+# 📦 产品需求文档 (PRD) - 视频会议助手 (v1.0)
 
-### ✨ 核心特性
+**文档状态**：已发布体验版  
+**项目类型**：Web 应用 (B 端 SaaS 视频会议管理)  
+**编写时间**：2026-07-08  
+**开发者**：1335389202-create
 
-- **工作台** - 快捷操作 + 统计卡片 + 今日日程 + 预定模板
-- **会前准备** - 三Tab双轨制（待筹备/已就绪/受邀参加）+ 左列表右详情
-- **会后跟进** - AI纪要 + 待办指派 + 截止日期提醒
-- **文档库** - 知识库/纪要分类 + 网格卡片 + 防泄密水印
-- **待办事项** - 全局任务列表 + 来源追踪 + 提醒徽章
-- **会中伴飞** - 全屏模式 + AI语音转写 + Mark标记
-- **效能洞察** - KPI指标 + 数据可视化 + ROI分析
+## 目录 (Table of Contents)
 
-## 🛠️ 技术栈
+1. [项目背景与目标](#1-项目背景与目标)
+2. [产品范围](#2-产品范围)
+3. [核心业务流程](#3-核心业务流程)
+4. [功能需求详情](#4-功能需求详情)
+5. [数据模型设计](#5-数据模型设计)
+6. [技术架构](#6-技术架构)
+7. [快速开始](#7-快速开始)
+
+---
+
+## 1. 项目背景与目标
+
+### 1.1 项目背景
+
+在企业日常运营中，会议管理是一个高频但效率低下的痛点。传统的会议管理往往分散在多个工具中（日历、文档、聊天软件），导致：
+- 会议准备不充分，资料分散
+- 会中缺乏实时记录和 AI 辅助
+- 会后跟进困难，任务分配不清晰
+- 会议知识难以沉淀和检索
+
+本项目旨在构建一个**一体化的会议全生命周期管理平台**，通过 AI 赋能，提升企业会议效率。
+
+### 1.2 产品目标
+
+- **核心价值**：打造「会前-会中-会后」的全流程会议管理闭环
+- **效率提升**：通过 AI 纪要、任务指派、知识沉淀，减少会议时间浪费 30%
+- **体验目标**：简洁专业的界面设计，降低学习成本，支持移动端响应式
+
+### 1.3 用户画像
+
+| 用户角色 | 核心特征 | 核心诉求 |
+|---|---|---|
+| **会议组织者** | 部门经理、项目负责人 | 快速筹备会议、追踪会议决议、沉淀会议知识 |
+| **会议参与者** | 团队成员、跨部门协作 | 清晰了解会议安排、快速接收任务、查看历史纪要 |
+| **管理者** | 企业高层 | 查看会议统计、分析会议效率、团队效能洞察 |
+
+---
+
+## 2. 产品范围
+
+### 2.1 功能架构图 (Feature Map)
+
+- **工作台**：快捷操作、统计卡片、今日日程、最近动态
+- **会前准备**：待筹备/已就绪/受邀参加、左列表右详情、深度编辑/只读预览
+- **会中伴飞**：全屏模式、AI 语音转写、Mark 标记、防泄密水印
+- **会后跟进**：会议录像、AI 结构化纪要、待办追踪、指派/截止日
+- **文档库**：知识库/纪要分类、搜索、网格卡片、水印保护
+- **待办事项**：全局任务列表、来源追踪、提醒徽章、状态筛选
+- **效能洞察**：KPI 指标、周趋势柱状图、类型分布、ROI 总结
+
+### 2.2 核心策略
+
+- **全流程管理**：从会议筹备到会后跟进的完整闭环
+- **AI 赋能**：语音转写、自动纪要、智能提醒
+- **数据安全**：防泄密水印、权限控制、审计日志
+
+---
+
+## 3. 核心业务流程
+
+### 3.1 标准会议流程
+
+1. **会前准备**
+   - 组织者创建会议，填写会议信息
+   - 添加参会人员，设置会议权限
+   - 上传会议材料，配置会议状态
+
+2. **会中伴飞**
+   - 进入会中模式，全屏展示
+   - AI 实时语音转写，生成会议纪要
+   - 参与者可标记重要内容 (Mark 功能)
+   - 防泄密水印保护会议内容
+
+3. **会后跟进**
+   - AI 自动生成结构化会议纪要
+   - 基于纪要指派待办任务，设置截止日期
+   - 任务关联会议，支持来源追踪
+   - 会议资料和纪要归档到文档库
+
+### 3.2 任务追踪流程
+
+- **任务创建**：可从会议纪要一键生成，或手动创建
+- **来源追踪**：每个任务都关联到具体会议，可追溯
+- **提醒机制**：支持飞书/钉钉/无提醒三种方式
+- **状态管理**：待办 → 进行中 → 已完成
+
+---
+
+## 4. 功能需求详情
+
+### 4.1 工作台模块
+
+| 页面/模块 | 功能点 | 详细逻辑说明 |
+|---|---|---|
+| **快捷操作** | 4 大入口 | 加入会议、快速会议、预定会议、共享屏幕（桌面端 4 列，移动端 2x2） |
+| **统计卡片** | 数据概览 | 今日会议数、待办任务数、本月会议时长、团队效能指数 |
+| **今日日程** | 时间线展示 | 按时间顺序展示今日所有会议，支持点击查看详情 |
+| **最近动态** | 活动流 | 最新的会议创建、任务完成、纪要生成等动态 |
+
+### 4.2 会前准备模块
+
+- **三 Tab 双轨制**
+  - **待筹备**：需要组织者准备的会议
+  - **已就绪**：准备完成的会议
+  - **受邀参加**：作为参与者的会议
+
+- **左列表右详情**
+  - 左侧：会议列表，按时间排序，支持筛选
+  - 右侧：选中会议的详细信息
+  - 支持**深度编辑**（组织者）和**只读预览**（参与者）
+
+### 4.3 会中伴飞模块
+
+- **全屏模式**：深色背景，沉浸式体验
+- **AI 语音转写**：实时显示转写文字，打字机效果
+- **Mark 标记**：醒目的琥珀色按钮，标记重要内容
+- **录制状态**：红色脉冲圆点 + 文字提示
+- **防泄密水印**：半透明倾斜文字，覆盖整个界面
+
+### 4.4 会后跟进模块
+
+- **AI 纪要**：自动提取会议要点、决议、待办事项
+- **任务指派**：从纪要中识别出待办，一键分配给相关人
+- **截止日期**：设置任务截止时间，支持日历选择
+- **会议录像**：关联录像回放（如有）
+
+### 4.5 文档库模块
+
+- **双 Tab 分类**：知识库、会议纪要
+- **网格卡片**：卡片式展示，显示标题、时间、作者
+- **搜索功能**：全文搜索文档内容
+- **水印保护**：所有文档都带防泄密水印
+
+### 4.6 待办事项模块
+
+- **全局任务列表**：所有待办任务集中展示
+- **来源追踪**：显示任务来自哪个会议
+- **提醒徽章**：未读、即将到期的任务有视觉提示
+- **状态筛选**：全部、待办、进行中、已完成
+
+### 4.7 效能洞察模块
+
+- **KPI 卡片**：会议数量、平均时长、任务完成率
+- **周趋势图**：柱状图展示最近 8 周会议趋势
+- **类型分布**：饼图展示不同类型会议占比
+- **ROI 总结**：会议投入产出分析和建议
+
+---
+
+## 5. 数据模型设计
+
+本项目采用**模拟数据 (Mock Data)**，实际生产可对接数据库。
+
+### 5.1 Meeting（会议）
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| `id` | string | 会议 ID |
+| `title` | string | 会议标题 |
+| `time` | string | 会议时间 |
+| `duration` | number | 会议时长（分钟） |
+| `location` | string | 会议地点 |
+| `currentUserRole` | string | 当前用户角色：'organizer' \| 'participant' |
+| `prepStatus` | string | 准备状态：'ready' \| 'pending' |
+| `description` | string | 会议描述 |
+| `participants` | array | 参会人员列表 |
+| `materials` | array | 会议材料 |
+
+### 5.2 Task（任务）
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| `id` | string | 任务 ID |
+| `title` | string | 任务标题 |
+| `description` | string | 任务描述 |
+| `status` | string | 状态：'pending' \| 'in-progress' \| 'completed' |
+| `dueDate` | string | 截止日期 |
+| `assignee` | string | 负责人 |
+| `meetingTitle` | string | 来源会议标题（来源追踪） |
+| `reminderPlatform` | string | 提醒方式：'feishu' \| 'dingtalk' \| 'none' |
+
+### 5.3 Document（文档）
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| `id` | string | 文档 ID |
+| `title` | string | 文档标题 |
+| `type` | string | 类型：'knowledge' \| 'minutes' |
+| `author` | string | 作者 |
+| `createdAt` | string | 创建时间 |
+| `content` | string | 文档内容 |
+
+---
+
+## 6. 技术架构
+
+### 6.1 技术栈
 
 | 技术 | 版本 | 说明 |
-|------|------|------|
-| Next.js | 16.1.1 | React 框架，App Router |
-| React | 19.2.3 | UI 库 |
-| TypeScript | 5.x | 类型安全 |
-| Tailwind CSS | 4 | 原子化 CSS |
-| shadcn/ui | latest | 组件库（基于 Radix UI） |
-| Lucide React | latest | 图标库 |
-| Recharts | 2.15.4 | 图表库 |
-| React Hook Form | 7.70.0 | 表单管理 |
-| Zod | 4.3.5 | 数据验证 |
+|---|---|---|
+| **Next.js** | 16.1.1 | React 框架，App Router |
+| **React** | 19.2.3 | UI 库 |
+| **TypeScript** | 5.x | 类型安全 |
+| **Tailwind CSS** | 4 | 原子化 CSS |
+| **shadcn/ui** | latest | UI 组件库（基于 Radix UI） |
+| **Lucide React** | latest | 图标库 |
+| **Recharts** | 2.15.4 | 数据可视化 |
+| **React Hook Form** | 7.70.0 | 表单管理 |
+| **Zod** | 4.3.5 | 数据验证 |
 
-## 📁 项目结构
+### 6.2 项目结构
 
 ```
-src/
-├── app/
-│   ├── globals.css          # 全局样式 + 主题变量
-│   ├── layout.tsx           # 根布局组件
-│   └── page.tsx             # 主页面（状态路由 + 会中伴飞全屏）
-├── components/
-│   ├── ui/                  # shadcn/ui 基础组件
-│   ├── sidebar.tsx          # 左侧导航栏（响应式）
-│   ├── header.tsx           # 顶部栏（AI 检索 + 时间）
-│   ├── dashboard.tsx        # 工作台
-│   ├── pre-meeting.tsx      # 会前准备
-│   ├── post-meeting.tsx     # 会后跟进
-│   ├── document-library.tsx # 文档库
-│   ├── todo-list.tsx        # 待办事项
-│   ├── in-meeting.tsx       # 会中伴飞
-│   ├── analytics.tsx        # 效能洞察
-│   ├── modal.tsx            # 通用弹窗
-│   └── watermark.tsx        # 防泄密水印
-└── lib/
-    ├── utils.ts             # 工具函数
-    └── mock-data.ts         # Mock 数据
+video-meeting-assistant/
+├── src/
+│   ├── app/
+│   │   ├── globals.css          # 全局样式 + 主题变量
+│   │   ├── layout.tsx           # 根布局组件
+│   │   └── page.tsx             # 主页面（状态路由 + 会中伴飞全屏）
+│   ├── components/
+│   │   ├── ui/                  # shadcn/ui 基础组件
+│   │   ├── sidebar.tsx          # 左侧导航栏（响应式）
+│   │   ├── header.tsx           # 顶部栏（AI 检索 + 时间）
+│   │   ├── dashboard.tsx        # 工作台
+│   │   ├── pre-meeting.tsx      # 会前准备
+│   │   ├── post-meeting.tsx     # 会后跟进
+│   │   ├── document-library.tsx # 文档库
+│   │   ├── todo-list.tsx        # 待办事项
+│   │   ├── in-meeting.tsx       # 会中伴飞
+│   │   ├── analytics.tsx        # 效能洞察
+│   │   ├── modal.tsx            # 通用弹窗
+│   │   └── watermark.tsx        # 防泄密水印
+│   ├── hooks/
+│   │   └── use-mobile.ts        # 移动端检测 Hook
+│   └── lib/
+│       ├── utils.ts             # 工具函数
+│       └── mock-data.ts         # Mock 数据
+├── public/                      # 静态资源
+├── package.json                 # 项目配置
+├── tsconfig.json                # TypeScript 配置
+├── tailwind.config.ts           # Tailwind 配置
+├── next.config.ts               # Next.js 配置
+├── DEPLOY.md                    # 部署指南
+├── DESIGN.md                    # 设计规范
+├── LICENSE                      # MIT 许可证
+└── README.md                    # 项目文档
 ```
 
-## 🚀 快速开始
-
-### 环境要求
-
-- Node.js 18+
-- pnpm 9+
-
-### 安装依赖
-
-```bash
-# 使用 pnpm 安装依赖（项目已配置仅允许 pnpm）
-pnpm install
-```
-
-### 开发模式
-
-```bash
-pnpm dev
-```
-
-打开浏览器访问 [http://localhost:5000](http://localhost:5000)
-
-### 构建生产版本
-
-```bash
-pnpm build
-```
-
-### 启动生产服务
-
-```bash
-pnpm start
-```
-
-### 代码检查
-
-```bash
-# TypeScript 类型检查
-pnpm ts-check
-
-# ESLint 检查
-pnpm lint
-
-# 完整验证（类型 + Lint）
-pnpm validate
-```
-
-## 🎨 设计规范
+### 6.3 设计规范
 
 - **主色调**：#2563EB（科技蓝）
 - **背景色**：#F8FAFC
@@ -123,57 +281,69 @@ pnpm validate
 
 详见 [DESIGN.md](./DESIGN.md)
 
-## 📊 数据模型
+---
 
-### Meeting（会议）
-```typescript
-interface Meeting {
-  id: string;
-  title: string;
-  currentUserRole: 'organizer' | 'participant';
-  prepStatus: 'ready' | 'pending';
-  // ...
-}
+## 7. 快速开始
+
+### 7.1 环境要求
+
+- Node.js 18+
+- pnpm 9+
+
+### 7.2 安装依赖
+
+```bash
+# 使用 pnpm 安装依赖（项目已配置仅允许 pnpm）
+pnpm install
 ```
 
-### Task（任务）
-```typescript
-interface Task {
-  id: string;
-  title: string;
-  meetingTitle: string; // 来源追踪
-  reminderPlatform: 'feishu' | 'dingtalk' | 'none';
-  // ...
-}
+### 7.3 开发模式
+
+```bash
+pnpm dev
 ```
 
-## 📝 开发指南
+打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-### 组件开发
+### 7.4 构建生产版本
 
-优先使用 shadcn/ui 组件：
-
-```tsx
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+```bash
+pnpm build
 ```
 
-### 路径别名
+### 7.5 启动生产服务
 
-使用 `@/` 前缀导入模块：
-
-```tsx
-import { utils } from '@/lib/utils';
-import { Sidebar } from '@/components/sidebar';
+```bash
+pnpm start
 ```
 
-### 样式开发
+### 7.6 代码检查
 
-使用 Tailwind CSS 原子化类名：
+```bash
+# TypeScript 类型检查
+pnpm ts-check
 
-```tsx
-<div className="flex items-center gap-4 p-4 rounded-lg bg-background">
+# ESLint 检查
+pnpm lint
 ```
+
+---
+
+## 界面展示
+
+| 工作台 | 会前准备 | 会中伴飞 |
+|---|---|---|
+|  |  |  |
+| 文档库 | 待办事项 | 效能洞察 |
+|  |  |  |
+
+---
+
+## 部署指南
+
+详细部署步骤请见 [DEPLOY.md](./DEPLOY.md)
+
+---
 
 ## 📄 许可证
 
