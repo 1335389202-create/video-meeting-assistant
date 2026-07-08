@@ -277,7 +277,6 @@ video-meeting-assistant/
 ├── tailwind.config.ts           # Tailwind 配置
 ├── next.config.ts               # Next.js 配置
 ├── DEPLOY.md                    # 部署指南
-├── DESIGN.md                    # 设计规范
 ├── LICENSE                      # MIT 许可证
 └── README.md                    # 项目文档
 ```
@@ -289,8 +288,6 @@ video-meeting-assistant/
 - **卡片设计**：圆角 XL + 阴影 + 边框
 - **响应式**：支持移动端到桌面端自适应
 - **字体**：Inter + 系统中文字体
-
-详见 [DESIGN.md](./DESIGN.md)
 
 ---
 
