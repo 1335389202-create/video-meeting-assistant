@@ -18,6 +18,7 @@
 
 **文档状态**：已发布体验版  
 **项目类型**：Web 应用 (B 端 SaaS 视频会议管理)  
+**部署平台**：Coze  
 **编写时间**：2026-07-08  
 **开发者**：1335389202-create
 
@@ -232,8 +233,18 @@
 | **Recharts** | 2.15.4 | 数据可视化 |
 | **React Hook Form** | 7.70.0 | 表单管理 |
 | **Zod** | 4.3.5 | 数据验证 |
+| **Coze** | - | 部署平台 |
 
-### 6.2 项目结构
+### 6.2 部署架构
+
+本项目基于 **Coze 平台** 开发和部署：
+
+- **开发环境**：Coze IDE 在线开发
+- **构建部署**：Coze 自动化 CI/CD
+- **托管服务**：Coze 云托管
+- **域名**：https://5mhb9wjg29.coze.site
+
+### 6.3 项目结构
 
 ```
 video-meeting-assistant/
@@ -285,19 +296,26 @@ video-meeting-assistant/
 
 ## 7. 快速开始
 
-### 7.1 环境要求
+### 7.1 在线体验
 
+直接访问：**[视频会议助手 V3](https://5mhb9wjg29.coze.site)**
+
+### 7.2 本地开发（可选）
+
+如果你想在本地运行项目进行开发：
+
+#### 环境要求
 - Node.js 18+
 - pnpm 9+
 
-### 7.2 安装依赖
+#### 安装依赖
 
 ```bash
 # 使用 pnpm 安装依赖（项目已配置仅允许 pnpm）
 pnpm install
 ```
 
-### 7.3 开发模式
+#### 开发模式
 
 ```bash
 pnpm dev
@@ -305,19 +323,19 @@ pnpm dev
 
 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-### 7.4 构建生产版本
+#### 构建生产版本
 
 ```bash
 pnpm build
 ```
 
-### 7.5 启动生产服务
+#### 启动生产服务
 
 ```bash
 pnpm start
 ```
 
-### 7.6 代码检查
+#### 代码检查
 
 ```bash
 # TypeScript 类型检查
@@ -326,6 +344,13 @@ pnpm ts-check
 # ESLint 检查
 pnpm lint
 ```
+
+### 7.3 Coze 开发流程
+
+1. 在 Coze IDE 中打开项目
+2. 使用 Coze 提供的开发工具进行开发
+3. 提交代码后自动触发 Coze CI/CD
+4. 部署成功后访问分配的域名
 
 ---
 
