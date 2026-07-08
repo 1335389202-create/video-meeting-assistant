@@ -1,7 +1,22 @@
 {
-  "name": "projects",
-  "version": "0.1.0",
+  "name": "video-meeting-assistant",
+  "version": "1.0.0",
+  "description": "商业级 B 端 SaaS 视频会议管理平台",
   "private": true,
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/你的用户名/video-meeting-assistant.git"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "video-conference",
+    "saas"
+  ],
   "scripts": {
     "build": "bash ./scripts/build.sh",
     "dev": "bash ./scripts/dev.sh",
